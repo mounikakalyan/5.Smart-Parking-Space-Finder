@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Parking Finder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🚗 Smart Parking Space Finder</h1>
+    <p>ADSA Mini Project | Min Heap + Graph</p>
+  </header>
+
+  <main>
+    <section class="dashboard">
+      <div class="stat">
+        <h3>Total Slots</h3>
+        <p id="total">8</p>
+      </div>
+      <div class="stat">
+        <h3>Available</h3>
+        <p id="available">8</p>
+      </div>
+      <div class="stat">
+        <h3>Occupied</h3>
+        <p id="occupied">0</p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Vehicle Entry</h2>
+      <div class="form">
+        <input id="vehicleNumber"
+               type="text"
+               placeholder="Enter vehicle number (e.g. AP39AB1234)">
+        <button onclick="parkVehicle()">Find Parking</button>
+      </div>
+      <p id="message">Enter a vehicle number to find a slot.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Parking Slots</h2>
+      <div id="parkingSlots" class="parking-grid"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Parking Graph</h2>
+      <p class="hint">
+        Entrance → A → B → C. The graph shows the
+        walking/driving distance from the entrance.
+      </p>
+      <div id="graph" class="graph"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Parking Records</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Vehicle</th>
+              <th>Slot</th>
+              <th>Distance</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="records"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <button class="reset" onclick="resetParking()">
+      Reset Parking
+    </button>
+  </main>
+
+  <footer>
+    <p>Advanced Data Structures and Algorithms</p>
+    <p>Min Heap + Graph Shortest Path</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
